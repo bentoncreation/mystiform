@@ -1,0 +1,5 @@
+<p>The following form submission was made for <%= link_to @submission.form_name, @submission.form %></p>
+
+<%= render "submissions/data", data: @submission.data %>
+
+<p>Submitted <%= @submission.created_at %> from <%= @submission.ip_address %></p>

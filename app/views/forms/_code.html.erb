@@ -1,0 +1,9 @@
+<form accept-charset="UTF-8" action="<%= form_url %>" method="POST">
+  <input type="text" name="name" placeholder="Your Name">
+  <input type="email" name="email" placeholder="Your Email">
+  <input type="text" name="phone" placeholder="Your Phone">
+  <div style="position: absolute; left: -5000px;">
+    <input type="text" name="<%= form.honeypot %>" placeholder="Don't fill this in" tabindex="-1">
+  </div>
+  <button type="submit">Submit</button>
+</form>

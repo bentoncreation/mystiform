@@ -1,0 +1,109 @@
+body {
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  text-decoration: underline;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+
+  &.btn {
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
+  margin-top: 0;
+
+  small {
+    font-family: $font-family-sans-serif;
+  }
+
+  .badge {
+    font-family: $font-family-sans-serif;
+    background-color: $text-color;
+  }
+}
+
+h1, .h1 {
+  margin-bottom: 20px;
+}
+
+h2, .h2 {
+  margin-bottom: 0;
+}
+
+h3, .h3, h4, .h4 {
+  font-family: $font-family-sans-serif;
+  font-weight: 500;
+  line-height: 1.5em;
+  margin-bottom: 0;
+}
+
+th {
+  color: $brand-primary;
+}
+
+label {
+  color: $brand-primary;
+}
+
+hr {
+  background-color: lighten($brand-primary, 35);
+  border: 0;
+  border-radius: 3px;
+  height: 2px;
+  margin: 10px 0 20px 0;
+}
+
+.navbar {
+  font-size: 16px;
+  margin-top: 20px;
+
+  .navbar-collapse {
+    box-shadow: none;
+  }
+
+  a.navbar-brand {
+    text-decoration: none;
+    height: 38px;
+  }
+
+  .nav {
+    margin-top: 10px;
+
+    li a {
+      text-decoration: none;
+    }
+  }
+
+  .navbar-toggle {
+    // padding: 8px 9px;
+    border: 0;
+    z-index: 20;
+
+    .icon-bar {
+      height: 3px;
+    }
+  }
+
+  hr {
+    background-color: lighten($brand-primary, 30);
+    border: 0;
+    border-radius: 6px;
+    height: 6px;
+    margin: 10px 0;
+  }
+}
+
+.col-md-1 {
+  font-size: 16px;
+}

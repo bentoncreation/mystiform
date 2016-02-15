@@ -1,0 +1,10 @@
+role :app, %w{domain.com}
+role :web, %w{domain.com}
+role :db, %w{domain.com}
+role :resque_worker, %w{domain.com}
+role :resque_scheduler, %w{domain.com}
+
+server "domain.com", user: "deploy", roles: %w{app web db resque_worker resque_scheduler}
+
+set :branch, "master"
+set :workers, { "default" => 1 }

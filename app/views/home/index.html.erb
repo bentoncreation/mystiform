@@ -1,0 +1,20 @@
+<% if user_signed_in? %>
+  <h1>Latest Submissions</h1>
+
+  <% if @submissions.any? %>
+    <%= render @submissions %>
+
+    <%= paginate @submissions %>
+  <% else %>
+    <p>No submission for this form.</p>
+  <% end %>
+<% else %>
+
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <h1>Log in</h2>
+
+      <%= render "devise/sessions/form", user: User.new %>
+    </div>
+  </div>
+<% end %>

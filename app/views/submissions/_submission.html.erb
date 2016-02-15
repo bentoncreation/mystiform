@@ -1,0 +1,61 @@
+<div class="row">
+  <div class="col-md-5">
+
+    <div class="row">
+      <div class="col-md-6">
+        <h4><%= submission.form_name %></h4>
+
+        <p>
+          <%= relative_time submission.created_at %>
+          <%= submission.ip_address %>
+        </p>
+      </div>
+
+      <div class="col-md-3">
+        <% if submission.form_email? %>
+          <h4>Email</h4>
+
+          <p>
+            <% if submission.email_sent? %>
+              <%= relative_time submission.email_sent_at %>
+            <% else %>
+              Pending
+            <% end %>
+          </p>
+        <% end %>
+      </div>
+
+      <div class="col-md-3">
+      <% if submission.form_webhook? %>
+        <h4>Webhook</h4>
+
+        <p>
+          <% if submission.webhook_sent? %>
+            <%= relative_time submission.webhook_sent_at %>
+          <% else %>
+            Pending
+          <% end %>
+        </p>
+      <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-5">
+    <%= render "submissions/data", data: submission.data %>
+  </div>
+
+  <div class="col-md-2">
+    <% if submission.deleted? %>
+      <%= button_to "Remove from trash", [:undelete, submission.form, submission], class: "btn btn-default btn-sm pull-right" %>
+    <% else %>
+      <%= button_to [:delete, submission.form, submission], class: "btn btn-default btn-sm pull-right" do %>
+        <i class="fa fa-trash"></i>
+        Send to trash
+      <% end %>
+    <% end %>
+  </div>
+
+</div>
+
+<hr>

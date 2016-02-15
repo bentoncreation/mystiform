@@ -1,0 +1,29 @@
+<h1>Forms</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Form</th>
+      <th>Redirect</th>
+      <th>Submissions</th>
+      <th>Created</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @forms.each do |form| %>
+      <tr>
+        <td><%= link_to form.name, form %></td>
+        <td class="text-muted"><%= form.redirect %></td>
+        <td class="text-muted"><%= form.submissions.undeleted.count %></td>
+        <td>
+          <time title="<%= form.created_at %>"><%= time_ago_in_words form.created_at %> ago</time>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to "New Form", new_form_path, class: "btn btn-default" %>

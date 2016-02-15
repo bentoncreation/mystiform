@@ -1,0 +1,12 @@
+<dl>
+  <% data.each do |key, value| %>
+    <dt><%= key %></dt>
+    <dd>
+      <% if value.present? %>
+        <%= value %>
+      <% else %>
+        <code>empty</code>
+      <% end %>
+    </dd>
+  <% end %>
+</dl>

@@ -1,0 +1,11 @@
+/.bundle
+/log/*
+!/log/.keep
+/tmp
+config/database.yml
+config/secrets.yml
+config/initializers/action_mailer.rb
+.DS_Store
+*.tmproj
+config/deploy.rb
+config/deploy/*.rb

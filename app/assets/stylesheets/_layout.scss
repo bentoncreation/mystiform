@@ -1,0 +1,57 @@
+time {
+  color: darken($body-bg, 30);
+  border-bottom: 1px dotted darken($body-bg, 20);
+  cursor: pointer;
+}
+
+dl {
+  margin-bottom: 10px;
+  padding: 5px;
+  background-color: #f3f3f3;
+  border-radius: 3px;
+
+  dt {
+    margin-right: 10px;
+    margin-bottom: 5px;
+    padding-right: 10px;
+    float: left;
+    width: 100px;
+    font-weight: bold;
+    color: $brand-primary;
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-color: #fff;
+  }
+
+  dd {
+    font-family: Courier;
+    margin-bottom: 5px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+label .necessity {
+  font-size: smaller;
+  font-weight: normal;
+  color: #999;
+}
+
+label.optional .necessity {
+  display: none;
+}
+
+form.show-optional {
+  label.optional .necessity {
+    display: inline;
+  }
+}
+
+form.hide-required {
+  label.required .necessity {
+    display: none;
+  }
+}

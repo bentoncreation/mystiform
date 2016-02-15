@@ -1,0 +1,80 @@
+// Bootstrap variables
+
+$brand-primary: #52d1dc;
+$brand-success: #52dc90;
+$brand-info: $brand-primary;
+$brand-warning: #dc9952;
+$brand-danger: #dc5252;
+
+$body-bg: #fff;
+$text-color: #8d8e8e;
+
+$font-family-sans-serif: "Work Sans", Helvetica, Arial, sans-serif !default;
+$font-family-serif: Quicksand, Georgia, serif !default;
+$font-size-base: 14px;
+$font-size-h1: 26px;
+$font-size-h2: 22px;
+$font-size-h3: 18px;
+$font-size-h4: 16px;
+$line-height-base: 1.575;
+$headings-font-family: $font-family-serif;
+$headings-font-weight: 700;
+$headings-line-height: 1.5em;
+$headings-color: $brand-primary;
+
+$padding-base-vertical: 12px;
+$padding-base-horizontal: 12px;
+
+$input-border: lighten($text-color, 30);
+$input-border-focus: lighten($text-color, 30);
+
+$table-border-color: lighten($brand-primary, 35);
+
+$btn-default-border: transparent;
+$btn-default-color: #fff;
+$btn-default-bg: $brand-primary;
+
+$btn-primary-border: transparent;
+$btn-primary-color: #fff;
+
+$screen-md: 992px;
+$screen-md-min: $screen-md;
+
+$grid-gutter-width: 30px;
+$grid-float-breakpoint: $screen-md-min;
+
+$navbar-height: 20px;
+$navbar-margin-bottom: 10px;
+$navbar-default-color: $brand-primary;
+$navbar-default-bg: transparent;
+$navbar-default-link-color: $brand-primary;
+$navbar-default-link-hover-color: $brand-primary;
+$navbar-border-radius: 0;
+$navbar-default-toggle-hover-bg: transparent;
+$navbar-default-toggle-icon-bar-bg: $brand-primary;
+$navbar-default-toggle-border-color: transparent;
+$navbar-default-brand-color: $brand-primary;
+$navbar-default-brand-hover-color: $brand-primary;
+$navbar-padding-horizontal: 0;
+$navbar-padding-vertical: 0;
+$nav-link-padding: 10px 10px;
+
+$code-color: #900;
+$code-bg: #fff;
+$pre-color: $text-color;
+$pre-bg: #f3f3f3;
+$pre-border-color: transparent;
+
+$brand-success: #52dc90;
+$brand-info: #52d1dc;
+$brand-warning: #dc9952;
+$brand-danger: #dc5252;
+
+$state-success-text: $brand-success;
+$state-success-bg: lighten($brand-success, 35);
+$state-info-text: $brand-info;
+$state-info-bg: lighten($brand-info, 35);
+$state-warning-text: $brand-warning;
+$state-warning-bg: lighten($brand-warning, 35);
+$state-danger-text: $brand-danger;
+$state-danger-bg: lighten($brand-danger, 35);

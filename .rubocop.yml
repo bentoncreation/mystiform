@@ -1,0 +1,8 @@
+AllCops:
+  Exclude:
+    - 'vendor/**/*'
+    - 'spec/fixtures/**/*'
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+  Enabled: true

@@ -1,0 +1,16 @@
+<%= simple_form_for(@form) do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :name %>
+  <%= f.input :redirect %>
+  <%= f.input :email %>
+  <%= f.input :webhook %>
+
+  <%= f.button :submit %>
+
+  <% if @form.persisted? %>
+    <%= link_to "Cancel", @form %>
+  <% else %>
+    <%= link_to "Cancel", forms_path %>
+  <% end %>
+<% end %>
