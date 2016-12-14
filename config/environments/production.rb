@@ -16,4 +16,8 @@ Rails.application.configure do
   config.active_support.deprecation = :notify
   config.log_formatter = ::Logger::Formatter.new
   config.active_record.dump_schema_after_migration = false
+
+  Rails.application.config.action_mailer.delivery_method = :postmark
+  Rails.application.config.action_mailer.postmark_settings = { api_token:
+    Rails.application.secrets.postmark_api_token }
 end
