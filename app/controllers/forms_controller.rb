@@ -30,7 +30,7 @@ class FormsController < ApplicationController
   def create
     @form = current_user.forms.new(params[:form])
     if @form.save
-      redirect_to(forms_path, notice: "Form was successfully created.")
+      redirect_to(@form, notice: "Form was successfully created.")
     else
       render action: :new
     end
@@ -39,7 +39,7 @@ class FormsController < ApplicationController
   def update
     @form = current_user.forms.find_by(token: params[:id])
     if @form.update_attributes(params[:form])
-      redirect_to(forms_path, notice: "Form was successfully updated.")
+      redirect_to(@form, notice: "Form was successfully updated.")
     else
       render action: :edit
     end

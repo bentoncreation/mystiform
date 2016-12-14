@@ -8,9 +8,9 @@ class Form < ActiveRecord::Base
   validates :name, presence: true
   validates :token, presence: true
   validates :honeypot, presence: true
-  validates :email, presence: true, email: true
   validates :redirect, presence: true,
                        format: { with: URI.regexp(%w(http https)) }
+  validates :email, email: true, allow_blank: true
   validates :webhook, format: { with: URI.regexp(%w(http https)),
                                 allow_blank: true }
 
