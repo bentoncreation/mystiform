@@ -14,15 +14,15 @@
 ActiveRecord::Schema.define(version: 20160129022123) do
 
   create_table "forms", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.string   "token",      limit: 255
+    t.string   "name",       limit: 191
+    t.string   "token",      limit: 191
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
-    t.string   "redirect",   limit: 255
-    t.string   "webhook",    limit: 255
-    t.string   "honeypot",   limit: 255
+    t.string   "redirect",   limit: 191
+    t.string   "webhook",    limit: 191
+    t.string   "honeypot",   limit: 191
     t.integer  "user_id",    limit: 4
-    t.string   "email",      limit: 255
+    t.string   "email",      limit: 191
   end
 
   add_index "forms", ["token"], name: "index_forms_on_token", unique: true, using: :btree
@@ -32,24 +32,24 @@ ActiveRecord::Schema.define(version: 20160129022123) do
     t.text     "data",            limit: 65535
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
-    t.string   "ip_address",      limit: 255
+    t.string   "ip_address",      limit: 191
     t.datetime "email_sent_at"
     t.datetime "webhook_sent_at"
     t.datetime "deleted_at"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  limit: 255, default: "", null: false
-    t.string   "encrypted_password",     limit: 255, default: "", null: false
-    t.string   "reset_password_token",   limit: 255
+    t.string   "email",                  limit: 191, default: "", null: false
+    t.string   "encrypted_password",     limit: 191, default: "", null: false
+    t.string   "reset_password_token",   limit: 191
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.integer  "sign_in_count",          limit: 4,   default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip",     limit: 255
-    t.string   "last_sign_in_ip",        limit: 255
-    t.string   "confirmation_token",     limit: 255
+    t.string   "current_sign_in_ip",     limit: 191
+    t.string   "last_sign_in_ip",        limit: 191
+    t.string   "confirmation_token",     limit: 191
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.datetime "created_at",                                      null: false
