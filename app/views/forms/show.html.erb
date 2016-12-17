@@ -28,6 +28,8 @@
     </h2>
   </div>
   <div class="col-md-6 text-right">
+    <%= link_to "Export to CSV", polymorphic_path([@form, :submissions], format: :csv) %>
+
     <%= link_to "View Trash", [:trash, @form] %>
   </div>
 </div>

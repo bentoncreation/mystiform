@@ -9,9 +9,9 @@ class SubmissionsController < ApplicationController
     @form = Form.find_by!(token: params[:form_id])
     @submissions = @form.submissions.undeleted
                                     .order(created_at: :desc)
-                                    .page(params[:page])
 
     respond_to do |format|
+      format.html
       format.csv do
         send_data SubmissionExporter.new(@submissions).data,
                     type: "text/csv; charset=utf-8; header=present",

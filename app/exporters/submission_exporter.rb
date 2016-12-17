@@ -11,12 +11,10 @@ class SubmissionExporter
     raw_data.inject([]) { |csv, row| csv << CSV.generate_line(row) }.join("")
   end
 
+  private
+
   def raw_data
     submissions.map { |submission| row(submission) }.unshift(header)
-  end
-
-  def columns
-    submissions.map(&:keys).flatten.uniq.sort
   end
 
   def header
@@ -25,5 +23,9 @@ class SubmissionExporter
 
   def row(row_hash)
     columns.map { |column| row_hash[column] }
+  end
+
+  def columns
+    submissions.map(&:keys).flatten.uniq.sort
   end
 end

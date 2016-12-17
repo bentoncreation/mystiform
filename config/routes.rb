@@ -1,7 +1,7 @@
 require "resque/server"
 
 Rails.application.routes.draw do
-  mount Resque::Server.new, :at => "/resque"
+  mount Resque::Server.new, at: "/resque"
 
   resources :forms, path: "f" do
     resources :submissions, only: [:index, :show] do
