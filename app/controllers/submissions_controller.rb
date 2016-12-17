@@ -5,6 +5,21 @@ class SubmissionsController < ApplicationController
   skip_before_filter :authenticate_user!, only: :create
   skip_before_action :verify_authenticity_token, only: :create
 
+  def index
+    @form = Form.find_by!(token: params[:form_id])
+    @submissions = @form.submissions.undeleted
+                                    .order(created_at: :desc)
+                                    .page(params[:page])
+
+    respond_to do |format|
+      format.csv do
+        send_data SubmissionExporter.new(@submissions).data,
+                    type: "text/csv; charset=utf-8; header=present",
+                    disposition: "attachment; filename=submissions.csv"
+      end
+    end
+  end
+
   def create
     @form = Form.find_by!(token: params[:id])
     @submission = @form.submissions.build(data: submission_params,
