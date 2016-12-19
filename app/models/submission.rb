@@ -8,16 +8,29 @@ class Submission < ActiveRecord::Base
   delegate :webhook, :webhook?, :email, :email?, :honeypot, :name,
            to: :form, prefix: "form"
 
+  validate :not_empty
+  validate :passed_honeypot
+  validate :passed_url_check
+
+  after_validation :remove_honeypot
   after_commit :process_submission, on: :create
 
   scope :deleted, -> { where.not(deleted_at: nil) }
   scope :undeleted, -> { where(deleted_at: nil) }
 
-  def check_and_save
-    return false if empty_data?
-    return false if failed_honeypot?
+  def not_empty
+    return unless empty_data?
+    errors.add(:base, "The form is empty.")
+  end
 
-    remove_honeypot && save
+  def passed_honeypot
+    return unless failed_honeypot?
+    errors.add(:base, "The form is filled out incorrectly.")
+  end
+
+  def passed_url_check
+    return unless form.disallow_urls && contains_url?
+    errors.add(:base, "The form should not contain URLs.")
   end
 
   def empty_data?

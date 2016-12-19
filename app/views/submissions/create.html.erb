@@ -1,1 +1,5 @@
-<p class="text-center">Whoops! Nothing in that form.</p>
+<h2 class="text-center">Submission error</h2>
+<p class="text-center">
+  <%= @submission.errors[:base].join(" ") %>
+</p>
+<p class="text-center"><%= link_to "Go back", :back %></p>

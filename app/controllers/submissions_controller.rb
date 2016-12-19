@@ -7,15 +7,14 @@ class SubmissionsController < ApplicationController
 
   def index
     @form = Form.find_by!(token: params[:form_id])
-    @submissions = @form.submissions.undeleted
-                                    .order(created_at: :desc)
+    @submissions = @form.submissions.undeleted.order(created_at: :desc)
 
     respond_to do |format|
       format.html
       format.csv do
         send_data SubmissionExporter.new(@submissions).data,
-                    type: "text/csv; charset=utf-8; header=present",
-                    disposition: "attachment; filename=submissions.csv"
+                  type: "text/csv; charset=utf-8; header=present",
+                  disposition: "attachment; filename=submissions.csv"
       end
     end
   end
@@ -24,7 +23,7 @@ class SubmissionsController < ApplicationController
     @form = Form.find_by!(token: params[:id])
     @submission = @form.submissions.build(data: submission_params,
                                           ip_address: request.remote_ip)
-    if @submission.check_and_save
+    if @submission.save
       redirect_to @form.redirect
     else
       render :create
