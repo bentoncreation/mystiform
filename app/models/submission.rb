@@ -42,7 +42,8 @@ class Submission < ActiveRecord::Base
   end
 
   def contains_url?
-    !data.values.map { |value| URI.extract(value, /http(s)?/) }.flatten.empty?
+    !data.values.flatten.map { |value| URI.extract(value, /http(s)?/) }
+      .flatten.empty?
   end
 
   def remove_honeypot
