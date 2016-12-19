@@ -28,6 +28,10 @@ class Submission < ActiveRecord::Base
     data[form_honeypot].nil? || !data[form_honeypot].empty?
   end
 
+  def contains_url?
+    !data.values.map { |value| URI.extract(value, /http(s)?/) }.flatten.empty?
+  end
+
   def remove_honeypot
     data.delete(form_honeypot)
   end
