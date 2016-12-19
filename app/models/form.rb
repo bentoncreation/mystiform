@@ -1,5 +1,5 @@
 class Form < ActiveRecord::Base
-  attr_accessible :name, :redirect, :webhook, :user_id, :email
+  attr_accessible :name, :redirect, :webhook, :user_id, :email, :disallow_urls
 
   belongs_to :user
   has_many :submissions, dependent: :destroy

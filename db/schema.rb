@@ -11,18 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160129022123) do
+ActiveRecord::Schema.define(version: 20161219203951) do
 
   create_table "forms", force: :cascade do |t|
-    t.string   "name",       limit: 191
-    t.string   "token",      limit: 191
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.string   "redirect",   limit: 191
-    t.string   "webhook",    limit: 191
-    t.string   "honeypot",   limit: 191
-    t.integer  "user_id",    limit: 4
-    t.string   "email",      limit: 191
+    t.string   "name",          limit: 191
+    t.string   "token",         limit: 191
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
+    t.string   "redirect",      limit: 191
+    t.string   "webhook",       limit: 191
+    t.string   "honeypot",      limit: 191
+    t.integer  "user_id",       limit: 4
+    t.string   "email",         limit: 191
+    t.boolean  "disallow_urls",             default: false, null: false
   end
 
   add_index "forms", ["token"], name: "index_forms_on_token", unique: true, using: :btree
