@@ -19,10 +19,12 @@ gem 'postmark-rails'
 gem 'cancancan'
 
 group :development, :test do
-  gem 'capistrano-rvm',   '~> 0.1', require: false
-  gem 'capistrano-rails',   '~> 1.1', require: false
-  gem 'capistrano-bundler', '~> 1.1', require: false
+  gem 'capistrano-rvm', require: false
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-passenger', require: false
   gem 'capistrano-resque', require: false
+
   gem 'letter_opener'
   gem 'byebug'
   gem 'rubocop'
