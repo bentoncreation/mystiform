@@ -1,2 +1,2 @@
-Resque.redis = Rails.application.secrets.redis
+Resque.redis = Redis.new(Rails.application.secrets.redis.symbolize_keys)
 Resque.redis.namespace = "mystiform:resque"
